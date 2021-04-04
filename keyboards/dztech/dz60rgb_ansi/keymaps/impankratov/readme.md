@@ -5,10 +5,11 @@ https://www.reddit.com/r/MechanicalKeyboards/comments/bcvcoa/compiled_list_of_dz
 
 ## Creating the impankratov dz60rgb firmware file
 
-1. While in the `qmk_firmware` directory, issue the following command
+1. While in the `qmk_firmware` directory, issue the following commands
 
     ```
     make git-submodule
+    ./util/qmk_install.sh 
     ```
 
     This will download the chibi-os submoduled needed to create firmware for ARM based boards such as the dz60rgb. 
@@ -16,7 +17,7 @@ https://www.reddit.com/r/MechanicalKeyboards/comments/bcvcoa/compiled_list_of_dz
 2. While in the `qmk_firmware` directory, issue the followng command
 
     ```
-    env CFLAGS="-Wno-error=deprecated" make dztech/dz60rgb_ansi/v1:impankratov
+    make dztech/dz60rgb_ansi/v1:impankratov
     ```
 
     This will result in a file called `dztech_dz60rgb_ansi_v1_impankratov.bin` that you can flash onto your board using QMK Toolbox. 
